@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cf4a5004-bb2d-4a25-beea-d4ff68153b35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homepage/countable/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/countable/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,10 +53,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../react-login" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -80,7 +85,10 @@
       <workItem from="1658025971651" duration="373000" />
       <workItem from="1658130298403" duration="1189000" />
       <workItem from="1658200365772" duration="703000" />
-      <workItem from="1658366733868" duration="12343000" />
+      <workItem from="1658366733868" duration="16643000" />
+      <workItem from="1658404051798" duration="1050000" />
+      <workItem from="1658419064171" duration="4519000" />
+      <workItem from="1658452104948" duration="7253000" />
     </task>
     <servers />
   </component>
@@ -100,9 +108,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="854" y="96" width="682" height="632" key="new project wizard" timestamp="1657525283780">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1658393022637">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="854" y="96" width="682" height="632" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1657525283780" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1658393022637" />
+    <state x="498" y="0" key="SettingsEditor" timestamp="1658383462240">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1658383462240" />
+    <state x="854" y="96" width="682" height="632" key="new project wizard" timestamp="1658392740537">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="854" y="96" width="682" height="632" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1658392740537" />
   </component>
 </project>

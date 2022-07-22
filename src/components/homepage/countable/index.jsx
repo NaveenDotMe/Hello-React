@@ -37,6 +37,7 @@ class Countable extends Component {
                 <Typography variant="h4" component="div" gutterBottom>
                     Count : {this.state.count}
                 </Typography>
+
                 {/*<Button variant="contained"
                         onClick={() => {
                             console.log("Clicked")
@@ -57,6 +58,7 @@ class Countable extends Component {
                             this.restCount()
                         }} style={{marginLeft: "15px"}}>Reset
                 </Button>*/}
+
                 <GDSEButton
                     label="Increase"
                     variant="contained"
@@ -86,7 +88,6 @@ class Countable extends Component {
             </div>
         )
     }
-
 }
 
 export default Countable
