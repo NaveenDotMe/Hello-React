@@ -10,7 +10,11 @@ class Login extends Component {
         super(props);
         this.state = {
             username: "admin",
-            password: "admin"
+            password: "admin",
+            formData: {
+                userName: "",
+                password: ""
+            }
         }
     }
 
@@ -18,6 +22,13 @@ class Login extends Component {
         console.log("Clicked")
         console.log("User Name : " + this.state.username)
         console.log("Password : " + this.state.password)
+
+        console.log(this.state.formData)
+        if (this.state.username == this.state.formData.userName && this.state.password == this.state.formData.password){
+            console.log("User Name and Password Correct")
+        }else {
+            console.log("User Name and Password InCorrect")
+        }
     }
 
 
@@ -38,6 +49,9 @@ class Login extends Component {
                             variant="outlined"
                             onChange={(e) => {
                                 console.log(e.target.value)
+                                let formData = this.state.formData //assigning formData Object to new formData variable
+                                formData.userName = e.target.value //Add values to formData Object using event
+                                this.setState({formData}) //Set values to formData using setState
                             }}
                         />
                         <TextField
@@ -45,8 +59,11 @@ class Login extends Component {
                             type="password"
                             label="Password"
                             variant="outlined"
-                            onChange={(e)=>{
+                            onChange={(e) => {
                                 console.log(e.target.value)
+                                let formData = this.state.formData
+                                formData.password = e.target.value
+                                this.setState({formData})
                             }}
                         />
                     </div>
