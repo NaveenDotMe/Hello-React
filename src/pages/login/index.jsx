@@ -14,7 +14,7 @@ class Login extends Component {
         }
     }
 
-    checkValidity(){
+    checkValidity() {
         console.log("Clicked")
         console.log("User Name : " + this.state.username)
         console.log("Password : " + this.state.password)
@@ -32,8 +32,23 @@ class Login extends Component {
                         </Typography>
                     </div>
                     <div className={classes.form_container}>
-                        <TextField id="outlined-basic" label="User Name" variant="outlined"/>
-                        <TextField id="outlined-basic" type="password" label="Passward" variant="outlined"/>
+                        <TextField
+                            id="outlined-basic"
+                            label="User Name"
+                            variant="outlined"
+                            onChange={(e) => {
+                                console.log(e.target.value)
+                            }}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            type="password"
+                            label="Password"
+                            variant="outlined"
+                            onChange={(e)=>{
+                                console.log(e.target.value)
+                            }}
+                        />
                     </div>
                     <div className={classes.button_container}>
                         <GDSEButton
