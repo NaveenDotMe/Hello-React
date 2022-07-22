@@ -8,7 +8,18 @@ import GDSEButton from "../../components/common/button";
 class Login extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            username: "admin",
+            password: "admin"
+        }
     }
+
+    checkValidity(){
+        console.log("Clicked")
+        console.log("User Name : " + this.state.username)
+        console.log("Password : " + this.state.password)
+    }
+
 
     render() {
         const {classes} = this.props;
@@ -27,7 +38,10 @@ class Login extends Component {
                     <div className={classes.button_container}>
                         <GDSEButton
                             label="Login"
-                                    variant="contained"
+                            variant="contained"
+                            onClick={() => {
+                                this.checkValidity();
+                            }}
                         />
                     </div>
                 </div>

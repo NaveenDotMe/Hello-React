@@ -12,7 +12,7 @@ export const styleSheet = {
         display: "flex",
         flexWrap: "wrap",
         flexDirection: "column",
-        height: "70%",
+        height: "50%",
         width: "30%",
         alignItems: "center",
         justifyContent: "center",
