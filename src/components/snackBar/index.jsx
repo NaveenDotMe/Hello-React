@@ -1,6 +1,6 @@
-import { Component } from "react";
+import {Component} from "react";
 import PropTypes from 'prop-types';
-import { Snackbar } from "@mui/material";
+import {Snackbar} from "@mui/material";
 import Alert from '@mui/material/Alert';
 
 class GDSESnackBar extends Component {
@@ -29,8 +29,11 @@ class GDSESnackBar extends Component {
     }
 
     handleButtonClose = (event) => {
-        const { onClose } = this.props
-        onClose && onclose({ event })
+        const {onClose} = this.props
+        onClose &&
+            onClose({
+                event,
+            })
     }
 
     renderChildren = (message, children) => {
@@ -66,4 +69,5 @@ class GDSESnackBar extends Component {
         )
     }
 }
+
 export default GDSESnackBar;

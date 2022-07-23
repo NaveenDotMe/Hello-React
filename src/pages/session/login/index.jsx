@@ -3,7 +3,8 @@ import {styleSheet} from "./style";
 import {withStyles} from "@mui/styles";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
-import GDSEButton from "../../components/common/button";
+import GDSEButton from "../../../components/common/button";
+import GDSESnackBar from "../../../components/snackBar";
 
 class Login extends Component {
     constructor(props) {
@@ -14,7 +15,11 @@ class Login extends Component {
             formData: {
                 userName: "",
                 password: ""
-            }
+            },
+            //SnackBar
+            open : false,
+            massage : "",
+            severity : ""
         }
     }
 
@@ -24,10 +29,20 @@ class Login extends Component {
         console.log("Password : " + this.state.password)
 
         console.log(this.state.formData)
-        if (this.state.username == this.state.formData.userName && this.state.password == this.state.formData.password){
+        if (this.state.username == this.state.formData.userName && this.state.password == this.state.formData.password) {
             console.log("User Name and Password Correct")
-        }else {
+            this.setState({
+                open: true,
+                message: "User credential matching sucess!",
+                severity: "success"
+            })
+        } else {
             console.log("User Name and Password InCorrect")
+            this.setState({
+                open: true,
+                message: "User credential not matching!",
+                severity: "error"
+            })
         }
     }
 
@@ -77,6 +92,16 @@ class Login extends Component {
                         />
                     </div>
                 </div>
+                <GDSESnackBar
+                    open={this.state.open}
+                    onClose={() => {
+                        this.setState({open: false})
+                    }}
+                    message={this.state.message}
+                    autoHideDuration={3000}
+                    severity={this.state.severity}
+                    variant="filled"
+                />
             </div>
         )
     }
