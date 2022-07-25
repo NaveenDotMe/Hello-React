@@ -5,6 +5,7 @@ import Login from "../pages/session/login";
 import NotFound from "../pages/session/NotFound";
 import FlexBox from "../pages/Layout/flexBox";
 import GridLayout from "../pages/Layout/Grid";
+import Posts from "../pages/post";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             <Route path="login" element={<Login/>}/>
             <Route path="flex" element={<FlexBox/>}/>
             <Route path="grid" element={<GridLayout/>}/>
+            <Route path="post" element={<Posts/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
     );
