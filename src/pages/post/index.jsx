@@ -27,7 +27,7 @@ class Posts extends Component {
     async loadData() {
         let res = await PostService.fetchPosts();
         if (res.status === 200) {
-            console.log("res: " + res)
+            console.log("res: " + JSON.stringify(res))
         } else {
             console.log("error: " + res)
         }
