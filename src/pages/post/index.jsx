@@ -5,6 +5,8 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import GDSEButton from "../../../src/components/common/button";
 import {TextValidator, ValidatorForm} from 'react-material-ui-form-validator';
+import PostService from "../../services/PostService";
+import GDSESnackBar from "../../components/snackBar";
 
 class Posts extends Component {
     constructor(props) {
@@ -15,13 +17,31 @@ class Posts extends Component {
                 Id: "",
                 title: "",
                 body: ""
-            }
+            },
+            alert: false,
+            message: '',
+            severity: ''
         }
     }
 
-    handleSubmit() {
+    handleSubmit = async () => {
         console.log("Save Button Clicked")
         console.log(this.state.formData)
+        let formData = this.state.formData
+        let response = await PostService.createPost(formData);
+        if (response.status === 201) {
+            this.setState({
+                alert: true,
+                message: "Post Crated Successfully",
+                severity: "success"
+            })
+        } else {
+            this.setState({
+                alert: true,
+                message: "Post Crated Unsuccessfully",
+                severity: "error"
+            })
+        }
     }
 
     render() {
@@ -114,6 +134,16 @@ class Posts extends Component {
                         </Grid>
                     </Grid>
                 </ValidatorForm>
+                <GDSESnackBar
+                    open={this.state.alert}
+                    onClose={() => {
+                        this.setState({open: false})
+                    }}
+                    message={this.state.message}
+                    autoHideDuration={3000}
+                    severity={this.state.severity}
+                    variant="filled"
+                />
             </Fragment>
         )
     }
