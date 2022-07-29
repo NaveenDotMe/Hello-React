@@ -24,6 +24,20 @@ class Posts extends Component {
         }
     }
 
+    async loadData() {
+        let res = await PostService.fetchPosts();
+        if (res.status === 200) {
+            console.log("res: " + res)
+        } else {
+            console.log("error: " + res)
+        }
+    }
+
+    componentDidMount() {
+        console.log("Post Screen Mounted!");
+        this.loadData();
+    }
+
     handleSubmit = async () => {
         console.log("Save Button Clicked")
         console.log(this.state.formData)
