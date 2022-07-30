@@ -7,6 +7,9 @@ import GDSEButton from "../../../src/components/common/button";
 import {TextValidator, ValidatorForm} from 'react-material-ui-form-validator';
 import PostService from "../../services/PostService";
 import GDSESnackBar from "../../components/snackBar";
+import {DataGrid} from "@mui/x-data-grid";
+import BasicPostTable from "./table";
+
 
 class Posts extends Component {
     constructor(props) {
@@ -20,13 +23,36 @@ class Posts extends Component {
             },
             alert: false,
             message: '',
-            severity: ''
+            severity: '',
+
+            //ForTable
+            /*columns: [
+                {field: 'userId', headerName: 'User ID', type: 'number', width: 70},
+                {field: 'Id', headerName: 'ID', type: 'number', width: 130},
+                {field: 'title', headerName: 'Title', width: 130},
+                {field: 'body', headerName: 'Body', width: 90,},
+
+                /!*{
+                    field: 'fullName',
+                    headerName: 'Full name',
+                    description: 'This column has a value getter and is not sortable.',
+                    sortable: false,
+                    width: 160,
+                    valueGetter: (params) =>
+                        `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+                },*!/
+
+            ]*/
         }
     }
 
     async loadData() {
         let res = await PostService.fetchPosts();
         if (res.status === 200) {
+            this.setState({
+                loaded: true,
+                data: res.data
+            })
             console.log("res: " + JSON.stringify(res))
         } else {
             console.log("error: " + res)
@@ -147,7 +173,23 @@ class Posts extends Component {
                             <GDSEButton size="small" label="Save" variant="contained" type="submit"/>
                         </Grid>
                     </Grid>
+                    {/*<Grid container spacing={0.5}>
+                        <DataGrid
+                            // rows={rows}
+                            columns={this.state.column}
+                            pageSize={5}
+                            rowsPerPageOptions={[5]}
+                            checkboxSelection
+                        />
+                    </Grid>*/}
                 </ValidatorForm>
+
+                {this.state.loaded &&
+                <Grid container spacing={0.5} style={{height: 400, width: '100%', marginTop: '50px'}}>
+                    <BasicPostTable data={this.state.data}/>
+                </Grid>
+                }
+
                 <GDSESnackBar
                     open={this.state.alert}
                     onClose={() => {
