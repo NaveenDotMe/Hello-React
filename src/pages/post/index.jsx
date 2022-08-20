@@ -21,9 +21,9 @@ class Posts extends Component {
                 title: "",
                 body: ""
             },
-            alert: false,
-            message: '',
-            severity: '',
+            open: false,
+            message: "",
+            severity:""
 
             //ForTable
             /*columns: [
@@ -48,6 +48,7 @@ class Posts extends Component {
 
     async loadData() {
         let res = await PostService.fetchPosts();
+        console.log("Raw Response: " + JSON.stringify(res))
         if (res.status === 200) {
             this.setState({
                 loaded: true,
@@ -71,13 +72,13 @@ class Posts extends Component {
         let response = await PostService.createPost(formData);
         if (response.status === 201) {
             this.setState({
-                alert: true,
+                open: true,
                 message: "Post Crated Successfully",
                 severity: "success"
             })
         } else {
             this.setState({
-                alert: true,
+                open: true,
                 message: "Post Crated Unsuccessfully",
                 severity: "error"
             })
@@ -191,7 +192,7 @@ class Posts extends Component {
                 }
 
                 <GDSESnackBar
-                    open={this.state.alert}
+                    open={this.state.open}
                     onClose={() => {
                         this.setState({open: false})
                     }}

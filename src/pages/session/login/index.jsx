@@ -33,7 +33,7 @@ class Login extends Component {
             console.log("User Name and Password Correct")
             this.setState({
                 open: true,
-                message: "User credential matching sucess!",
+                message: "User credential matching success!",
                 severity: "success"
             })
         } else {

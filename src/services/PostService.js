@@ -18,7 +18,7 @@ class PostService {
 
     fetchPosts = async () => {
         const promise = new Promise((resolve, reject) => {
-            axios.get('posts')
+            axios.get('postsd')
                 .then((res) => {
                     return resolve(res)
                 })

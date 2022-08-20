@@ -6,6 +6,7 @@ import NotFound from "../pages/session/NotFound";
 import FlexBox from "../pages/Layout/flexBox";
 import GridLayout from "../pages/Layout/Grid";
 import Posts from "../pages/post";
+import Customers from "../pages/Customers";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="flex" element={<FlexBox/>}/>
             <Route path="grid" element={<GridLayout/>}/>
             <Route path="post" element={<Posts/>}/>
+            <Route path="customer-manage" element={<Customers/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
     );
